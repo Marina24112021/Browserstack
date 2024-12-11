@@ -18,7 +18,7 @@ public class ProfilePage {
             view_wiki_error_text = $(id("org.wikipedia.alpha:id/view_wiki_error_text"));
     ElementsCollection elementsCollection = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
 
-    @Step("Напечатать слово 'Uzbekistan'")
+    @Step("Напечатать слово [{searchValue}]")
     public void setSearchValue(String searchValue) {
         accessibilityIdStr.click();
         search_src_text.sendKeys(searchValue);
