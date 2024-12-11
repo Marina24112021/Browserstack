@@ -2,7 +2,7 @@ package helpers;
 
 import static drivers.BrowserstackDriver.config;
 import static io.restassured.RestAssured.given;
-import static specs.CodeDemoQASpec.successfulResponse200Spec;
+import static specs.CodeWikiSpec.successfulResponse200Spec;
 
 public class Browserstack {
     public static String videoUrl(String sessionId) {
