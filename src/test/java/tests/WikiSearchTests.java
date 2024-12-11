@@ -1,22 +1,25 @@
 package tests;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.ProfilePage;
+import screens.DetailErrorScreen;
+import screens.SearchResultListScreen;
+import screens.components.SearchInputComponent;
 
 public class WikiSearchTests extends TestBase {
-    ProfilePage obj = new ProfilePage();
+    SearchInputComponent searchInputComponent = new SearchInputComponent();
+    SearchResultListScreen searchResultListScreen = new SearchResultListScreen();
+    DetailErrorScreen detailErrorScreen = new DetailErrorScreen();
 
     @Test
     void defaultDriverSuccessfulSearchTest() {
-        obj.setSearchValue("Appium");
-        obj.checkListIsNotEmpty();
+        searchInputComponent.setSearchValue("Appium");
+        searchResultListScreen.checkListIsNotEmpty();
     }
 
     @Test
     void negativeSearchTestForDetailPage() {
-        obj.setSearchValue("Uzbekistan");
-        obj.selectFirstItem();
-        obj.checkErrorMessageIsVisible();
+        searchInputComponent.setSearchValue("Uzbekistan");
+        searchResultListScreen.selectFirstItem();
+        detailErrorScreen.checkErrorMessageIsVisible();
     }
 }

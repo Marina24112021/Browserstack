@@ -10,20 +10,20 @@ import org.aeonbits.owner.Config;
 
 public interface WebDriverConfig extends Config {
     @Key("browserstack.userName")
-    String userName();
+    String getUserName();
 
     @Key("browserstack.accessKey")
-    String accessKey();
+    String getAccessKey();
 
     @Key("app")
-    String app();
+    String getApp();
 
     @Key("remoteUrl")
-    String remoteURL();
+    String getRemoteURL();
 
     @Key("device")
-    String device();
+    String getDevice();
 
     @Key("os_version")
-    String os_version();
+    String getOs_version();
 }
