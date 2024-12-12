@@ -20,7 +20,7 @@ import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class EmulationDriver implements WebDriverProvider {
-    public static EmulationConfig config = ConfigFactory.create(EmulationConfig.class, System.getProperties());
+    public static final EmulationConfig config = ConfigFactory.create(EmulationConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
         try {

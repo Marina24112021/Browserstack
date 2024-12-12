@@ -12,11 +12,11 @@ import static com.codeborne.selenide.Selenide.back;
 
 @Tag("emulation")
 public class EmulationTests extends TestBase {
-    SearchInputComponent searchInputComponent = new SearchInputComponent();
-    SearchResultListScreen searchResultListScreen = new SearchResultListScreen();
-    MainScreen mainScreen = new MainScreen();
-    DetailItemScreen detailItemScreen = new DetailItemScreen();
-    PreviewArticleScreen previewArticleScreen = new PreviewArticleScreen();
+    final SearchInputComponent searchInputComponent = new SearchInputComponent();
+    final SearchResultListScreen searchResultListScreen = new SearchResultListScreen();
+    final MainScreen mainScreen = new MainScreen();
+    final DetailItemScreen detailItemScreen = new DetailItemScreen();
+    final PreviewArticleScreen previewArticleScreen = new PreviewArticleScreen();
 
     @Test
     void positiveLinkOnDetailPageTest() {
