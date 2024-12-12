@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PreviewArticleScreen {
     @Step("Проверка названия заголовка {title} согласно нажатой ссылке")
     public void checkTitleLink(String title) {
-        final SelenideElement link_preview_title = $(id("org.wikipedia.alpha:id/link_preview_title"));
+        SelenideElement link_preview_title = $(id("org.wikipedia.alpha:id/link_preview_title"));
         assertThat(link_preview_title.getText().contains(title));
     }
 }
