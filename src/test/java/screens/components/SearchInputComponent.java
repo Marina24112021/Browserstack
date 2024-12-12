@@ -11,7 +11,7 @@ public class SearchInputComponent {
     final SelenideElement accessibilityIdStr = $(accessibilityId("Search Wikipedia")),
             search_src_text = $(id("org.wikipedia.alpha:id/search_src_text"));
 
-    @Step("Напечатать слово [{searchValue}]")
+    @Step("Напечатать слово {searchValue}")
     public void setSearchValue(String searchValue) {
         accessibilityIdStr.click();
         search_src_text.sendKeys(searchValue);

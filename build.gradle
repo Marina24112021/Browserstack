@@ -13,7 +13,8 @@ def aspectjWeaverVersion = "1.9.22",
     restAssuredVersion = "5.3.0",
     allureVersion = "2.21.0",
     junitVersion = "5.9.3",
-    slf4jVersion = "2.0.7"
+    slf4jVersion = "2.0.7",
+        assertjVersion = "3.26.3"
 
 allure {
     report {
@@ -40,7 +41,9 @@ dependencies {
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            'org.aeonbits.owner:owner:1.0.12'
+            'org.aeonbits.owner:owner:1.0.12',
+            "commons-io:commons-io:2.11.0",
+            "org.assertj:assertj-core:$assertjVersion"
     )
 }
 tasks.withType(JavaCompile) {
@@ -48,11 +51,21 @@ tasks.withType(JavaCompile) {
 }
 tasks.withType(Test) {
     useJUnitPlatform()
-
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+task browserstack(type: Test) {
+    useJUnitPlatform {
+        includeTags("browserstack")
+    }
+}
+
+task emulation (type: Test) {
+    useJUnitPlatform {
+        includeTags("emulation")
     }
 }
