@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.id;
 
 public class SearchResultListScreen {
-     ElementsCollection elementsCollection = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
+    ElementsCollection elementsCollection = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
 
     @Step("Выбираем первую статью в списке")
     public void selectFirstItem() {

@@ -1,16 +1,15 @@
 package screens;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class PreviewArticleScreen {
-    @Step("Проверка названия заголовка {title} согласно нажатой ссылке")
-    public void checkTitleLink(String title) {
-        SelenideElement link_preview_title = $(id("org.wikipedia.alpha:id/link_preview_title"));
-        assertThat(link_preview_title.getText().contains(title));
+    @Step("Проверка названия заголовка {expectedTitle} согласно нажатой ссылке в статье. Тест негатиный - заголовок неверный")
+    public void checkTitleOfLinkIsIncorrect(String expectedTitle) {
+        String actualTitle = $(id("org.wikipedia.alpha:id/link_preview_title")).getText();
+        assertNotEquals(expectedTitle, actualTitle);
     }
 }

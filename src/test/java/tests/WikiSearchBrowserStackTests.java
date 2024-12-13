@@ -9,9 +9,9 @@ import screens.components.SearchInputComponent;
 @Tag("browserstack")
 public class WikiSearchBrowserStackTests extends TestBase {
 
-     SearchInputComponent searchInputComponent = new SearchInputComponent();
-     SearchResultListScreen searchResultListScreen = new SearchResultListScreen();
-     DetailErrorScreen detailErrorScreen = new DetailErrorScreen();
+    SearchInputComponent searchInputComponent = new SearchInputComponent();
+    SearchResultListScreen searchResultListScreen = new SearchResultListScreen();
+    DetailErrorScreen detailErrorScreen = new DetailErrorScreen();
 
     @Test
     void defaultDriverSuccessfulSearchTest() {
