@@ -19,7 +19,6 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        String d = System.getProperty("devicehost");
         if (devicehost.equals("emulation")) {
             Configuration.browser = EmulationDriver.class.getName();
         } else if (devicehost.equals("browserstack")) {
